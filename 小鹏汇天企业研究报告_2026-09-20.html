@@ -1,0 +1,930 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="小鹏汇天（汇天 / ARIDGE）企业研究报告：发展历程、创始团队、核心技术与经营状态。资料截至2026年9月20日。">
+  <title>小鹏汇天企业研究报告｜2026-09-20</title>
+  <style>
+    :root {
+      --bg: #07100f;
+      --bg-soft: #0b1715;
+      --panel: rgba(14, 29, 27, .82);
+      --panel-2: #10231f;
+      --ink: #f2f8f5;
+      --muted: #9bb1aa;
+      --line: rgba(160, 230, 205, .16);
+      --green: #a7ff3f;
+      --green-2: #42e6a4;
+      --cyan: #6ee7ff;
+      --amber: #ffd166;
+      --red: #ff7a7a;
+      --shadow: 0 24px 80px rgba(0, 0, 0, .35);
+      --radius: 24px;
+      --sans: "Microsoft YaHei UI", "PingFang SC", "Noto Sans CJK SC", system-ui, -apple-system, sans-serif;
+      --mono: "Cascadia Code", "SFMono-Regular", Consolas, monospace;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 12% 4%, rgba(80, 255, 167, .11), transparent 26rem),
+        radial-gradient(circle at 92% 22%, rgba(36, 197, 255, .08), transparent 30rem),
+        var(--bg);
+      font-family: var(--sans);
+      line-height: 1.75;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .13;
+      background-image:
+        linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: linear-gradient(to bottom, black, transparent 80%);
+      z-index: -1;
+    }
+
+    a { color: inherit; }
+    img { max-width: 100%; display: block; }
+    button { font: inherit; }
+    sup a { color: var(--green); text-decoration: none; font-weight: 800; }
+    :focus-visible { outline: 2px solid var(--green); outline-offset: 3px; }
+
+    .progress {
+      position: fixed;
+      inset: 0 auto auto 0;
+      width: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--green), var(--cyan));
+      z-index: 100;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(18px);
+      background: rgba(7, 16, 15, .74);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .topbar-inner {
+      width: min(1180px, calc(100% - 36px));
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 64px;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      font-weight: 900;
+      letter-spacing: -.02em;
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      width: 26px;
+      height: 26px;
+      border: 6px solid var(--green);
+      border-right-color: transparent;
+      transform: rotate(45deg);
+      border-radius: 7px;
+      box-shadow: 0 0 22px rgba(167, 255, 63, .35);
+    }
+
+    .brand small {
+      display: block;
+      color: var(--muted);
+      font: 500 9px/1 var(--mono);
+      letter-spacing: .18em;
+      margin-top: 2px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    nav::-webkit-scrollbar { display: none; }
+    nav a {
+      padding: 9px 11px;
+      border-radius: 999px;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+    nav a:hover, nav a.active { color: var(--ink); background: rgba(255,255,255,.06); }
+
+    main, footer { width: min(1180px, calc(100% - 36px)); margin-inline: auto; }
+
+    .hero {
+      min-height: calc(100vh - 65px);
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      align-items: center;
+      gap: clamp(32px, 5vw, 72px);
+      padding: 78px 0 54px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--green);
+      font: 700 12px/1.3 var(--mono);
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { content: ""; width: 28px; height: 1px; background: currentColor; }
+
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      margin: 22px 0 22px;
+      font-size: clamp(48px, 7vw, 94px);
+      line-height: .98;
+      letter-spacing: -.065em;
+      max-width: 780px;
+    }
+    h1 .outline {
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(240, 255, 248, .52);
+    }
+    .lede { max-width: 700px; color: #c5d4cf; font-size: clamp(17px, 2vw, 21px); line-height: 1.75; }
+    .hero-meta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 13px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: #cfe1db;
+      background: rgba(255,255,255,.035);
+      font-size: 12px;
+    }
+    .chip::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--green); box-shadow: 0 0 12px currentColor; }
+    .chip.caution::before { background: var(--amber); }
+
+    .hero-visual {
+      position: relative;
+      min-height: 600px;
+    }
+    .hero-image {
+      position: absolute;
+      inset: 5% -8% 8% 0;
+      width: 108%;
+      height: 87%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 46% 18px 46% 18px;
+      filter: saturate(.92) contrast(1.04);
+      box-shadow: var(--shadow);
+    }
+    .hero-visual::after {
+      content: "";
+      position: absolute;
+      inset: 5% -8% 8% 0;
+      border-radius: 46% 18px 46% 18px;
+      background: linear-gradient(160deg, transparent 45%, rgba(0,0,0,.6));
+      pointer-events: none;
+    }
+    .hero-index {
+      position: absolute;
+      top: 2%; right: 2%;
+      z-index: 2;
+      color: var(--green);
+      font: 800 clamp(74px, 11vw, 142px)/.8 var(--mono);
+      letter-spacing: -.1em;
+      opacity: .85;
+    }
+    .hero-caption {
+      position: absolute;
+      left: 24px; bottom: 10%; z-index: 3;
+      width: min(330px, 78%);
+      padding: 17px 20px;
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(2, 11, 9, .76);
+      backdrop-filter: blur(15px);
+      border-radius: 16px;
+      font-size: 12px;
+      color: #cddbd7;
+    }
+    .hero-caption strong { color: var(--ink); display: block; font-size: 15px; }
+
+    section { padding: 96px 0; scroll-margin-top: 70px; }
+    .section-head {
+      display: grid;
+      grid-template-columns: .74fr 1.26fr;
+      gap: 40px;
+      align-items: end;
+      margin-bottom: 38px;
+    }
+    .section-kicker { color: var(--green); font: 700 11px/1 var(--mono); letter-spacing: .15em; text-transform: uppercase; }
+    h2 { font-size: clamp(34px, 5vw, 64px); line-height: 1.08; letter-spacing: -.05em; margin: 13px 0 0; }
+    .section-intro { color: var(--muted); max-width: 650px; justify-self: end; margin: 0; }
+
+    .verdict {
+      position: relative;
+      padding: clamp(28px, 5vw, 58px);
+      border: 1px solid rgba(167,255,63,.28);
+      border-radius: var(--radius);
+      background:
+        linear-gradient(120deg, rgba(167,255,63,.09), transparent 46%),
+        var(--panel);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .verdict::after {
+      content: "INDUSTRIALIZATION";
+      position: absolute;
+      right: -28px; bottom: -4px;
+      color: rgba(255,255,255,.035);
+      font: 900 clamp(40px, 8vw, 104px)/1 var(--mono);
+      letter-spacing: -.08em;
+      white-space: nowrap;
+    }
+    .verdict-label { color: var(--green); font: 700 11px/1 var(--mono); letter-spacing: .16em; }
+    .verdict p { position: relative; z-index: 1; margin: 15px 0 0; font-size: clamp(23px, 3.2vw, 39px); line-height: 1.45; letter-spacing: -.03em; max-width: 1020px; }
+    .verdict strong { color: var(--green); }
+
+    .metrics { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-top: 18px; }
+    .metric {
+      min-height: 154px;
+      padding: 22px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+    }
+    .metric-value { color: var(--green); font: 800 clamp(28px, 3.6vw, 44px)/1 var(--mono); letter-spacing: -.06em; }
+    .metric-name { margin-top: 14px; font-weight: 800; }
+    .metric-note { color: var(--muted); font-size: 11px; margin-top: 6px; line-height: 1.55; }
+
+    .boundary-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 12px; }
+    .boundary {
+      padding: 20px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,209,102,.22);
+      background: rgba(255,209,102,.055);
+    }
+    .boundary .tag { color: var(--amber); font: 700 10px/1 var(--mono); letter-spacing: .12em; }
+    .boundary strong { display: block; margin: 12px 0 4px; }
+    .boundary p { color: #c5cec9; font-size: 12px; margin: 0; line-height: 1.65; }
+
+    .profile-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 16px; }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+    .panel-pad { padding: clamp(24px, 4vw, 40px); }
+    .profile-list { margin: 0; }
+    .profile-row { display: grid; grid-template-columns: 145px 1fr; gap: 18px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+    .profile-row:last-child { border-bottom: 0; }
+    .profile-row dt { color: var(--muted); font-size: 12px; }
+    .profile-row dd { margin: 0; font-weight: 700; }
+    .profile-row dd span { display: block; color: var(--muted); font-size: 12px; font-weight: 400; margin-top: 3px; }
+
+    .quote-panel {
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: linear-gradient(150deg, #183c31, #0b1715 70%);
+    }
+    .quote-mark { color: var(--green); font: 800 72px/.7 Georgia, serif; }
+    blockquote { margin: 20px 0 30px; font-size: clamp(21px, 2.6vw, 30px); line-height: 1.5; letter-spacing: -.025em; }
+    .small-note { color: var(--muted); font-size: 11px; }
+
+    .timeline-tools { display: flex; gap: 8px; margin-bottom: 22px; flex-wrap: wrap; }
+    .filter-button {
+      border: 1px solid var(--line);
+      color: var(--muted);
+      background: transparent;
+      padding: 8px 14px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 12px;
+    }
+    .filter-button:hover, .filter-button.active { background: var(--green); color: #07100f; border-color: var(--green); font-weight: 800; }
+    .timeline { position: relative; margin-left: 110px; border-left: 1px solid var(--line); }
+    .timeline-item { position: relative; display: grid; grid-template-columns: 180px 1fr; gap: 28px; padding: 0 0 42px 36px; transition: .2s ease; }
+    .timeline-item::before { content: ""; position: absolute; left: -6px; top: 10px; width: 11px; height: 11px; border-radius: 50%; background: var(--bg); border: 2px solid var(--green); box-shadow: 0 0 15px rgba(167,255,63,.3); }
+    .timeline-year { position: absolute; left: -112px; top: -5px; color: var(--green); font: 800 20px/1.3 var(--mono); }
+    .timeline-item h3 { margin: 0; font-size: 19px; }
+    .timeline-item p { margin: 7px 0 0; color: var(--muted); font-size: 13px; }
+    .phase {
+      justify-self: start;
+      align-self: start;
+      color: var(--cyan);
+      font: 700 9px/1 var(--mono);
+      letter-spacing: .12em;
+      border: 1px solid rgba(110,231,255,.24);
+      padding: 7px 9px;
+      border-radius: 999px;
+    }
+    .timeline-item.hidden { display: none; }
+
+    .team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 13px; }
+    .person-card { position: relative; min-height: 300px; padding: 26px; background: var(--panel); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; }
+    .person-card::after { content: attr(data-index); position: absolute; right: -4px; bottom: -24px; color: rgba(255,255,255,.035); font: 900 110px/1 var(--mono); }
+    .person-role { color: var(--green); font: 700 10px/1.4 var(--mono); letter-spacing: .12em; text-transform: uppercase; }
+    .person-card h3 { margin: 22px 0 8px; font-size: 28px; }
+    .person-title { min-height: 44px; font-weight: 800; font-size: 13px; }
+    .person-card p { color: var(--muted); font-size: 12px; margin: 18px 0 0; }
+
+    .talent-panel { display: grid; grid-template-columns: 1.2fr .8fr; gap: 0; margin-top: 14px; }
+    .talent-copy { padding: clamp(26px, 4vw, 44px); }
+    .talent-copy h3 { font-size: 27px; margin-bottom: 10px; }
+    .talent-copy p { color: var(--muted); font-size: 13px; }
+    .talent-bars { padding: clamp(26px, 4vw, 44px); background: rgba(255,255,255,.025); }
+    .bar { margin-bottom: 22px; }
+    .bar:last-child { margin-bottom: 0; }
+    .bar-head { display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 7px; }
+    .bar-head b { color: var(--green); font-family: var(--mono); }
+    .bar-track { height: 6px; background: rgba(255,255,255,.08); border-radius: 99px; overflow: hidden; }
+    .bar-track span { display: block; height: 100%; width: var(--width); background: linear-gradient(90deg, var(--green), var(--cyan)); border-radius: inherit; }
+
+    .product-feature {
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      min-height: 610px;
+      margin-bottom: 16px;
+      background: #0e1d1a;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .product-image { width: 100%; height: 100%; min-height: 430px; object-fit: cover; cursor: zoom-in; }
+    .product-copy { padding: clamp(28px, 5vw, 58px); display: flex; flex-direction: column; justify-content: center; }
+    .product-copy h3 { font-size: clamp(31px, 4.5vw, 54px); letter-spacing: -.045em; line-height: 1.08; margin: 12px 0 10px; }
+    .product-copy > p { color: var(--muted); }
+    .spec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 22px; }
+    .spec { padding: 15px; border: 1px solid var(--line); border-radius: 13px; background: rgba(255,255,255,.025); }
+    .spec b { display: block; color: var(--green); font: 800 18px/1.25 var(--mono); }
+    .spec span { color: var(--muted); font-size: 11px; }
+
+    .tech-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 12px; }
+    .tech-card { padding: 24px; min-height: 230px; border: 1px solid var(--line); border-radius: 18px; background: var(--panel); }
+    .tech-num { color: var(--green); font: 800 11px/1 var(--mono); letter-spacing: .1em; }
+    .tech-card h3 { margin: 25px 0 10px; font-size: 22px; }
+    .tech-card p { color: var(--muted); font-size: 12px; margin: 0; }
+
+    .system-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 14px; }
+    .system-card { position: relative; min-height: 430px; border-radius: var(--radius); overflow: hidden; background: var(--panel); border: 1px solid var(--line); }
+    .system-card img { width: 100%; height: 290px; object-fit: cover; cursor: zoom-in; }
+    .system-card .copy { padding: 24px; }
+    .system-card h3 { margin-bottom: 7px; }
+    .system-card p { color: var(--muted); font-size: 12px; margin: 0; }
+
+    .status-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .status-card { padding: 24px; background: var(--panel); border: 1px solid var(--line); border-radius: 18px; }
+    .status-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .status-pill { padding: 5px 9px; border-radius: 99px; font: 800 9px/1 var(--mono); letter-spacing: .08em; }
+    .status-pill.done { background: rgba(66,230,164,.13); color: var(--green-2); }
+    .status-pill.moving { background: rgba(110,231,255,.13); color: var(--cyan); }
+    .status-pill.gate { background: rgba(255,209,102,.13); color: var(--amber); }
+    .status-card h3 { margin: 25px 0 8px; font-size: 20px; }
+    .status-card p { color: var(--muted); font-size: 12px; margin: 0; }
+    .status-evidence { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--line); color: #c8d7d2; font-size: 11px; }
+
+    .factory-feature { display: grid; grid-template-columns: .9fr 1.1fr; margin-top: 14px; min-height: 520px; }
+    .factory-copy { padding: clamp(28px, 5vw, 52px); display: flex; flex-direction: column; justify-content: center; }
+    .factory-copy h3 { font-size: clamp(28px, 4vw, 43px); line-height: 1.15; margin: 10px 0 14px; }
+    .factory-copy p { color: var(--muted); }
+    .factory-image { height: 100%; min-height: 420px; width: 100%; object-fit: cover; cursor: zoom-in; }
+
+    .certificate-flow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 14px; }
+    .gate-step { position: relative; padding: 23px; background: var(--panel); border: 1px solid var(--line); border-radius: 16px; }
+    .gate-step::after { content: "→"; position: absolute; top: 50%; right: -21px; transform: translateY(-50%); color: var(--green); z-index: 2; }
+    .gate-step:last-child::after { display: none; }
+    .gate-step .n { color: var(--green); font: 800 12px/1 var(--mono); }
+    .gate-step h3 { margin: 18px 0 8px; font-size: 17px; }
+    .gate-step p { margin: 0; color: var(--muted); font-size: 11px; }
+    .gate-step.current { border-color: rgba(255,209,102,.38); box-shadow: inset 0 0 0 1px rgba(255,209,102,.1); }
+    .gate-step.current .n { color: var(--amber); }
+
+    .operations-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 14px; }
+    .op-panel { padding: clamp(26px, 4vw, 42px); }
+    .op-panel h3 { font-size: 26px; margin-bottom: 15px; }
+    .op-list { list-style: none; padding: 0; margin: 0; }
+    .op-list li { position: relative; padding: 13px 0 13px 24px; border-top: 1px solid var(--line); color: #c5d4cf; font-size: 13px; }
+    .op-list li::before { content: ""; position: absolute; left: 0; top: 22px; width: 7px; height: 7px; border-radius: 50%; background: var(--green); }
+
+    .risk-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .risk-card { padding: 26px; border-radius: 18px; background: var(--panel); border: 1px solid var(--line); }
+    .risk-level { font: 800 10px/1 var(--mono); letter-spacing: .13em; color: var(--amber); }
+    .risk-card h3 { margin: 20px 0 8px; font-size: 20px; }
+    .risk-card p { color: var(--muted); font-size: 12px; margin: 0; }
+    .risk-card.high { border-top: 3px solid var(--red); }
+    .risk-card.medium { border-top: 3px solid var(--amber); }
+    .risk-card.watch { border-top: 3px solid var(--cyan); }
+
+    .gallery { display: grid; grid-template-columns: 1.35fr .65fr .65fr; grid-auto-rows: 230px; gap: 10px; }
+    .gallery figure { position: relative; margin: 0; overflow: hidden; border-radius: 16px; background: var(--panel); border: 1px solid var(--line); }
+    .gallery figure:first-child { grid-row: span 2; }
+    .gallery figure:nth-child(4) { grid-column: span 2; }
+    .gallery img { width: 100%; height: 100%; object-fit: cover; cursor: zoom-in; transition: transform .5s ease; }
+    .gallery figure:hover img { transform: scale(1.035); }
+    .gallery figcaption { position: absolute; inset: auto 0 0; padding: 42px 15px 13px; background: linear-gradient(transparent, rgba(0,0,0,.86)); font-size: 11px; color: #d9e3df; }
+
+    .sources-table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 18px; }
+    table { width: 100%; border-collapse: collapse; min-width: 820px; background: var(--panel); }
+    th, td { text-align: left; padding: 16px 18px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th { color: var(--muted); font: 700 10px/1.3 var(--mono); letter-spacing: .1em; text-transform: uppercase; background: rgba(255,255,255,.025); }
+    td { font-size: 12px; color: #cad7d3; }
+    td:first-child { color: var(--green); font: 800 12px/1.5 var(--mono); }
+    td a { color: var(--ink); text-underline-offset: 3px; }
+    tr:last-child td { border-bottom: 0; }
+
+    .method-note { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 14px; }
+    .method-note > div { padding: 24px; border: 1px solid var(--line); border-radius: 16px; background: rgba(255,255,255,.025); }
+    .method-note h3 { font-size: 16px; margin-bottom: 8px; }
+    .method-note p { color: var(--muted); font-size: 11px; margin: 0; }
+
+    footer { padding: 50px 0 70px; border-top: 1px solid var(--line); color: var(--muted); font-size: 11px; display: flex; justify-content: space-between; gap: 30px; }
+    footer strong { color: var(--ink); }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: rgba(0,0,0,.92);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: min(1400px, 94vw); max-height: 88vh; object-fit: contain; border-radius: 12px; box-shadow: 0 20px 90px #000; }
+    .lightbox button { position: absolute; top: 20px; right: 22px; width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(255,255,255,.25); color: #fff; background: rgba(255,255,255,.08); cursor: pointer; font-size: 24px; }
+    .lightbox-caption { position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); color: #cbd6d2; font-size: 11px; text-align: center; width: min(800px, 86vw); }
+
+    @media (max-width: 1020px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-visual { min-height: 520px; }
+      .hero-image, .hero-visual::after { right: 0; }
+      .metrics { grid-template-columns: repeat(3, 1fr); }
+      .boundary-grid, .team-grid, .tech-grid, .status-strip { grid-template-columns: repeat(2, 1fr); }
+      .product-feature, .factory-feature { grid-template-columns: 1fr; }
+      .product-image { max-height: 560px; }
+      .factory-copy { order: 2; }
+      .factory-image { order: 1; }
+    }
+
+    @media (max-width: 760px) {
+      .topbar-inner { width: min(100% - 24px, 1180px); }
+      .brand div:last-child { display: none; }
+      main, footer { width: min(100% - 24px, 1180px); }
+      .hero { min-height: auto; padding-top: 56px; }
+      .hero-visual { min-height: 400px; }
+      .hero-image, .hero-visual::after { inset: 3% 0 4%; width: 100%; border-radius: 34% 14px 34% 14px; }
+      section { padding: 70px 0; }
+      .section-head { grid-template-columns: 1fr; gap: 18px; }
+      .section-intro { justify-self: start; }
+      .metrics, .boundary-grid, .profile-grid, .team-grid, .talent-panel, .tech-grid, .system-grid, .status-strip, .operations-grid, .risk-grid, .method-note { grid-template-columns: 1fr; }
+      .metric { min-height: 130px; }
+      .profile-row { grid-template-columns: 105px 1fr; }
+      .timeline { margin-left: 72px; }
+      .timeline-item { grid-template-columns: 1fr; padding-left: 24px; gap: 10px; }
+      .timeline-year { left: -74px; font-size: 15px; }
+      .phase { grid-row: 1; margin-bottom: 4px; }
+      .certificate-flow { grid-template-columns: 1fr; }
+      .gate-step::after { content: "↓"; top: auto; bottom: -24px; right: 50%; transform: translateX(50%); }
+      .gallery { grid-template-columns: 1fr 1fr; grid-auto-rows: 190px; }
+      .gallery figure:first-child { grid-row: auto; grid-column: span 2; }
+      .gallery figure:nth-child(4) { grid-column: span 2; }
+      footer { flex-direction: column; }
+    }
+
+    @media (max-width: 440px) {
+      h1 { font-size: 46px; }
+      nav a { padding-inline: 8px; }
+      .gallery { grid-template-columns: 1fr; }
+      .gallery figure:first-child, .gallery figure:nth-child(4) { grid-column: auto; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; animation: none !important; }
+    }
+
+    @page { size: A4; margin: 12mm 12mm 15mm; }
+    @page:first { margin: 0; }
+
+    @media print {
+      :root { --bg: #fff; --panel: #fff; --ink: #101713; --muted: #52615b; --line: #d9e2de; --green: #287a50; }
+      body { background: #fff; color: #101713; font-size: 10pt; }
+      body::before, .topbar, .progress, .timeline-tools, .lightbox { display: none !important; }
+      main, footer { width: 100%; }
+      .hero {
+        width: 210mm;
+        height: 297mm;
+        min-height: 297mm;
+        margin: 0;
+        padding: 22mm 16mm;
+        grid-template-columns: 1.06fr .94fr;
+        page-break-after: always;
+        break-after: page;
+      }
+      .hero-visual { min-height: 182mm; }
+      section {
+        padding: 0;
+        break-before: page;
+        page-break-before: always;
+        break-inside: auto;
+      }
+      .section-head { break-after: avoid-page; page-break-after: avoid; }
+      h2, h3 { break-after: avoid-page; page-break-after: avoid; }
+      .panel, .metric, .boundary, .person-card, .tech-card, .status-card, .risk-card, .gate-step, .system-card, .product-feature { break-inside: avoid; box-shadow: none; }
+      .timeline-item, .profile-row, .bar, .op-list li, figure, tr { break-inside: avoid; page-break-inside: avoid; }
+      .verdict::after, .person-card::after { color: #eef2ef; }
+      .gallery { grid-auto-rows: 165px; }
+      a { text-decoration: none; }
+      footer { padding: 12mm 0 0; break-before: avoid-page; page-break-before: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="progress" id="progress" aria-hidden="true"></div>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#top" aria-label="返回报告顶部">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>汇天企业研究<small>ARIDGE COMPANY BRIEF</small></span>
+      </a>
+      <nav aria-label="报告目录">
+        <a href="#summary">结论</a>
+        <a href="#timeline">历程</a>
+        <a href="#team">团队</a>
+        <a href="#technology">技术</a>
+        <a href="#operations">经营</a>
+        <a href="#sources">来源</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <header class="hero">
+      <div>
+        <span class="eyebrow">Company Intelligence · 2026</span>
+        <h1>小鹏汇天<br><span class="outline">企业研究报告</span></h1>
+        <p class="lede">从 2013 年创业起点，到“陆地航母”进入试产爬坡：一份聚焦发展脉络、核心团队、技术能力与商业化状态的公开信息研究。</p>
+        <div class="hero-meta">
+          <span class="chip">资料截至 2026-09-20</span>
+          <span class="chip">公开信息研究</span>
+          <span class="chip caution">非投资建议</span>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <span class="hero-index">01</span>
+        <img class="hero-image zoomable" src="xphuitian_report_assets/land_carrier_hero.webp" alt="陆地航母陆行体与飞行体自动分合官方示意图">
+        <div class="hero-caption"><strong>陆地航母 / Land Aircraft Carrier</strong>分体式飞行汽车，由陆行体与可自动收纳的飞行体组成。图源：汇天官网<sup><a href="#source-3">[3]</a></sup></div>
+      </div>
+    </header>
+
+    <section id="summary">
+      <div class="section-head">
+        <div><span class="section-kicker">01 / Executive view</span><h2>先说结论</h2></div>
+        <p class="section-intro">汇天已越过单纯概念验证阶段，正在搭建“产品—工厂—适航—运营生态”的产业化闭环；但截至本报告资料截止日，仍不能等同于已实现全面规模交付。</p>
+      </div>
+
+      <div class="verdict">
+        <span class="verdict-label">ONE-LINE VERDICT</span>
+        <p>企业正从<strong>原型验证</strong>进入<strong>工业化爬坡与商业化前夜</strong>：制造、订单与融资均有可见进展，真正的分水岭仍是适航取证、规模交付和订单转化。</p>
+      </div>
+
+      <div class="metrics" aria-label="关键指标">
+        <div class="metric"><div class="metric-value">2013</div><div class="metric-name">创业起点</div><div class="metric-note">现法定主体注册于 2020 年，二者需区分<sup><a href="#source-2">[2]</a></sup></div></div>
+        <div class="metric"><div class="metric-value">7,000+</div><div class="metric-name">公开订单口径</div><div class="metric-note">截至 2026 年 7 月披露；不等于确认收入<sup><a href="#source-13">[13]</a></sup></div></div>
+        <div class="metric"><div class="metric-value">10,000</div><div class="metric-name">规划年产能</div><div class="metric-note">广州智造基地首期规划，不代表当期产量<sup><a href="#source-6">[6]</a></sup></div></div>
+        <div class="metric"><div class="metric-value">≈$1B</div><div class="metric-name">历史股权融资</div><div class="metric-note">媒体汇总口径，约 10 亿美元<sup><a href="#source-11">[11]</a></sup></div></div>
+        <div class="metric"><div class="metric-value">4</div><div class="metric-name">核心技术领域</div><div class="metric-note">动力总成、飞控导航、复合材料、空中智能</div></div>
+      </div>
+
+      <div class="boundary-grid" aria-label="关键口径提示">
+        <div class="boundary"><span class="tag">SCOPE 01</span><strong>订单 ≠ 收入</strong><p>公开“订单/预订”反映需求意向，不等于已交付数量、确认收入或不可撤销合同。</p></div>
+        <div class="boundary"><span class="tag">SCOPE 02</span><strong>受理 ≠ 发证</strong><p>TC/PC 申请获受理说明审定程序启动或推进，不等于型号合格证、生产许可证已经颁发。</p></div>
+        <div class="boundary"><span class="tag">SCOPE 03</span><strong>目标 ≠ 结果</strong><p>“2026 年量产交付”是企业计划，仍取决于取证、产品一致性、运营规则与配套基础设施。</p></div>
+        <div class="boundary"><span class="tag">SCOPE 04</span><strong>报道 ≠ 官宣</strong><p>港股 IPO 仅见媒体报道；企业公开回应为专注研发与量产，未正式确认申报状态。</p></div>
+      </div>
+    </section>
+
+    <section id="profile">
+      <div class="section-head">
+        <div><span class="section-kicker">02 / Corporate profile</span><h2>企业档案</h2></div>
+        <p class="section-intro">2025 年 10 月品牌体系更新后，国际品牌采用 ARIDGE，中文前台称“汇天”；“小鹏汇天”仍是市场熟知的历史名称。法定主体没有因此改变。</p>
+      </div>
+      <div class="profile-grid">
+        <article class="panel panel-pad">
+          <dl class="profile-list">
+            <div class="profile-row"><dt>法定主体</dt><dd>广东汇天航空航天科技有限公司<span>成立于 2020 年 12 月；企业起源可追溯到 2013 年东莞市汇天科技有限公司</span></dd></div>
+            <div class="profile-row"><dt>当前品牌</dt><dd>汇天 / ARIDGE<span>2025 年 10 月更新国际品牌；本文为延续公众认知，仍使用“小鹏汇天”作研究主题名</span></dd></div>
+            <div class="profile-row"><dt>企业关系</dt><dd>小鹏汽车生态企业<span>2020 年何小鹏及小鹏汽车投资并控股；不宜简单等同为上市公司普通事业部</span></dd></div>
+            <div class="profile-row"><dt>主力产品</dt><dd>陆地航母（近期产业化重点）<span>A868 为高速长航程全倾转混电飞行汽车，处于研发与产品定义阶段</span></dd></div>
+            <div class="profile-row"><dt>业务边界</dt><dd>低空飞行器研发、制造与运营生态<span>正延伸至飞行培训、飞行营地与 6S 综合运营中心</span></dd></div>
+          </dl>
+        </article>
+        <article class="panel panel-pad quote-panel">
+          <div>
+            <div class="quote-mark">“</div>
+            <blockquote>它不是把汽车加上翅膀，而是尝试把航空器的安全边界、汽车的规模制造与地面出行场景装进同一套产品体系。</blockquote>
+          </div>
+          <p class="small-note">研究者概括。企业官方定位与产品信息参见汇天官网及产品页。<sup><a href="#source-1">[1]</a></sup><sup><a href="#source-3">[3]</a></sup></p>
+        </article>
+      </div>
+    </section>
+
+    <section id="timeline">
+      <div class="section-head">
+        <div><span class="section-kicker">03 / Milestones</span><h2>发展历程</h2></div>
+        <p class="section-intro">从民间探索、资本与汽车产业能力注入，到产品适航、工厂试产与海外市场开拓，汇天的发展可分为四个阶段。</p>
+      </div>
+      <div class="timeline-tools" role="group" aria-label="时间线筛选">
+        <button class="filter-button active" data-filter="all">全部</button>
+        <button class="filter-button" data-filter="origin">创业验证</button>
+        <button class="filter-button" data-filter="product">产品定型</button>
+        <button class="filter-button" data-filter="industrial">产业化</button>
+        <button class="filter-button" data-filter="scale">规模爬坡</button>
+      </div>
+      <div class="timeline">
+        <article class="timeline-item" data-phase="origin"><time class="timeline-year">2013</time><div><h3>赵德力创办汇天科技</h3><p>东莞市汇天科技有限公司成立，成为今天汇天创业历程的起点。</p></div><span class="phase">ORIGIN</span></article>
+        <article class="timeline-item" data-phase="origin"><time class="timeline-year">2016</time><div><h3>第一代低空载人飞行器开展测试</h3><p>开始验证载人飞行器的总体构型、动力与操纵能力。</p></div><span class="phase">PROTOTYPE</span></article>
+        <article class="timeline-item" data-phase="origin"><time class="timeline-year">2018</time><div><h3>首代原型机完成载人首飞</h3><p>王谭以联合创始人、总设计师身份加入，航空器研发与汽车设计能力开始汇合。</p></div><span class="phase">MANNED FLIGHT</span></article>
+        <article class="timeline-item" data-phase="origin"><time class="timeline-year">2020</time><div><h3>小鹏体系投资控股</h3><p>何小鹏及小鹏汽车投资、控股；旅航者 X1 研制与试飞，企业进入体系化发展阶段。</p></div><span class="phase">INTEGRATION</span></article>
+        <article class="timeline-item" data-phase="product"><time class="timeline-year">2021</time><div><h3>产品公开与大额融资</h3><p>旅航者 X1 亮相上海车展；完成超过 5 亿美元 A 轮融资，披露投前估值超过 10 亿美元。</p></div><span class="phase">SERIES A</span></article>
+        <article class="timeline-item" data-phase="product"><time class="timeline-year">2022.10</time><div><h3>旅航者 X2 完成海外首次公开飞行</h3><p>在迪拜完成公开飞行展示，验证国际传播与海外场景。<sup><a href="#source-5">[5]</a></sup></p></div><span class="phase">DUBAI</span></article>
+        <article class="timeline-item" data-phase="product"><time class="timeline-year">2023.01</time><div><h3>X2 获国内特许飞行证</h3><p>作为特定型号、特定条件下的飞行许可节点，不应与陆地航母 X3-F 的完整适航取证混同。</p></div><span class="phase">PERMIT</span></article>
+        <article class="timeline-item" data-phase="industrial"><time class="timeline-year">2024.03</time><div><h3>X3-F 型号合格证申请获受理</h3><p>中国民航局正式受理 TC 申请，陆地航母飞行体进入型号审定流程。</p></div><span class="phase">TC ACCEPTED</span></article>
+        <article class="timeline-item" data-phase="industrial"><time class="timeline-year">2024.07–08</time><div><h3>完成 1.5 亿美元 B1 轮融资</h3><p>资金继续投向研发、适航和规模制造准备。</p></div><span class="phase">SERIES B1</span></article>
+        <article class="timeline-item" data-phase="industrial"><time class="timeline-year">2024.09</time><div><h3>陆地航母实车发布</h3><p>分体式构型、自动分合和地空一体产品路线正式面向公众。</p></div><span class="phase">PRODUCT REVEAL</span></article>
+        <article class="timeline-item" data-phase="industrial"><time class="timeline-year">2024.10</time><div><h3>广州飞行汽车智造基地动工</h3><p>首期约 18 万平方米，规划年产能 1 万台，定位为飞行汽车规模量产工厂。<sup><a href="#source-6">[6]</a></sup></p></div><span class="phase">FACTORY</span></article>
+        <article class="timeline-item" data-phase="industrial"><time class="timeline-year">2024.11</time><div><h3>完成多场公开飞行展示</h3><p>珠海航展完成全球公开首飞，广州车展完成首次公开载人飞行。</p></div><span class="phase">PUBLIC FLIGHT</span></article>
+        <article class="timeline-item" data-phase="industrial"><time class="timeline-year">2025.01</time><div><h3>披露预订超过 3,000 台</h3><p>CES 期间披露需求数据，并持续展示安全、分合机构与智能飞行能力。<sup><a href="#source-7">[7]</a></sup></p></div><span class="phase">PRE-ORDERS</span></article>
+        <article class="timeline-item" data-phase="industrial"><time class="timeline-year">2025.05</time><div><h3>X3-F 生产许可证申请获受理</h3><p>PC 申请获受理；彼时 TC 处于符合性确认阶段。受理不是发证。<sup><a href="#source-8">[8]</a></sup></p></div><span class="phase">PC ACCEPTED</span></article>
+        <article class="timeline-item" data-phase="industrial"><time class="timeline-year">2025.07</time><div><h3>完成 2.5 亿美元 B 轮融资</h3><p>产业资本继续支持适航、制造与商业化布局。</p></div><span class="phase">SERIES B</span></article>
+        <article class="timeline-item" data-phase="industrial"><time class="timeline-year">2025.10–11</time><div><h3>更新 ARIDGE 品牌并发布 A868</h3><p>国际化品牌体系上线；A868 展示高速、长航程、全倾转混电产品方向。</p></div><span class="phase">BRAND + A868</span></article>
+        <article class="timeline-item" data-phase="scale"><time class="timeline-year">2026.03</time><div><h3>批量试产与新一轮融资</h3><p>广州工厂内 5 台陆地航母飞行器同线试产下线并完成多机试飞；随后完成近 2 亿美元新一轮股权融资。<sup><a href="#source-9">[9]</a></sup><sup><a href="#source-11">[11]</a></sup></p></div><span class="phase">PILOT BUILD</span></article>
+        <article class="timeline-item" data-phase="scale"><time class="timeline-year">2026.07</time><div><h3>公开订单超过 7,000 台</h3><p>小鹏方面重申 2026 年量产、规模交付目标。该数据是订单口径，不等于已交付。<sup><a href="#source-13">[13]</a></sup></p></div><span class="phase">7K ORDERS</span></article>
+        <article class="timeline-item" data-phase="scale"><time class="timeline-year">2026.08</time><div><h3>第 1,000 套电推进单元下线</h3><p>800V 电推进系统迈入千套级生产节点，为整机量产提供关键部件准备。<sup><a href="#source-14">[14]</a></sup></p></div><span class="phase">1K E-DRIVE</span></article>
+      </div>
+    </section>
+
+    <section id="team">
+      <div class="section-head">
+        <div><span class="section-kicker">04 / Leadership</span><h2>创始人与团队</h2></div>
+        <p class="section-intro">核心班底呈现“创业者 + 汽车产业 + 航空工程 + 资本市场”的复合结构。以下仅列示公开资料中可确认的关键成员。</p>
+      </div>
+      <div class="team-grid">
+        <article class="person-card" data-index="01"><span class="person-role">Chairman / Ecosystem</span><h3>何小鹏</h3><div class="person-title">董事长<br>小鹏汽车董事长、CEO</div><p>负责长期战略、资本与小鹏汽车生态协同，为汽车级供应链、智能化与规模制造能力导入提供支点。</p></article>
+        <article class="person-card" data-index="02"><span class="person-role">Founder / President</span><h3>赵德力</h3><div class="person-title">创始人、总裁、法定代表人</div><p>2013 年开启创业探索，长期主导飞行汽车产品路径、企业经营和产业化落地。</p></article>
+        <article class="person-card" data-index="03"><span class="person-role">Co-founder / Design</span><h3>王谭</h3><div class="person-title">联合创始人、副总裁、总设计师</div><p>2018 年加入，同时具小鹏汽车造型设计管理背景，连接航空器总体设计与汽车产品体验。</p></article>
+        <article class="person-card" data-index="04"><span class="person-role">CFO / Capital</span><h3>杜超</h3><div class="person-title">CFO 兼副总裁</div><p>2025 年 6 月加入（Michael Chao Du），负责财务、资本市场与投融资相关能力建设。</p></article>
+      </div>
+
+      <div class="panel talent-panel">
+        <div class="talent-copy">
+          <span class="section-kicker">TEAM DNA · 2022 DISCLOSURE</span>
+          <h3>研发密集型、跨行业工程组织</h3>
+          <p>企业 2022 年公开口径为团队超过 700 人、研发人员占 85%、超过 90% 来自航空/汽车/互联网行业、硕博占比近 50%。这些数字能说明组织结构，但不能当作 2026 年实时人数。</p>
+          <p class="small-note">能力覆盖多余度飞控、空地自动驾驶、高压高能动力、热管理、空气动力学、综合航电、适航质量、结构强度与汽车技术等。<sup><a href="#source-5">[5]</a></sup></p>
+        </div>
+        <div class="talent-bars" aria-label="2022年团队结构">
+          <div class="bar"><div class="bar-head"><span>研发人员占比</span><b>85%</b></div><div class="bar-track"><span style="--width:85%"></span></div></div>
+          <div class="bar"><div class="bar-head"><span>航空 / 汽车 / 互联网背景</span><b>&gt;90%</b></div><div class="bar-track"><span style="--width:92%"></span></div></div>
+          <div class="bar"><div class="bar-head"><span>硕博占比</span><b>≈50%</b></div><div class="bar-track"><span style="--width:50%"></span></div></div>
+          <p class="small-note">注：可视化使用 2022 年企业公开数据；未找到截至 2026-09-20 经审计或官网确认的最新员工总数。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="technology">
+      <div class="section-head">
+        <div><span class="section-kicker">05 / Technology</span><h2>核心技术与产品</h2></div>
+        <p class="section-intro">企业强调四大核心技术领域的全栈自研、自主可控。近期商业化重心是分体式“陆地航母”，A868 则代表更高速、更长航程的下一产品方向。</p>
+      </div>
+
+      <article class="product-feature">
+        <img class="product-image zoomable" src="xphuitian_report_assets/land_carrier_drive.webp" alt="陆地航母陆行体与飞行体官方产品图">
+        <div class="product-copy">
+          <span class="eyebrow">Near-term flagship</span>
+          <h3>陆地航母：<br>把飞行器装进车里</h3>
+          <p>三轴六轮陆行体 + 可自动收纳的 X3-F 飞行体。产品逻辑不是让整车起飞，而是用地面母舰解决飞行器运输、补能与存放。</p>
+          <div class="spec-grid">
+            <div class="spec"><b>≈5 min</b><span>一键自动分离 / 结合</span></div>
+            <div class="spec"><b>6×6</b><span>全轮驱动 + 后轮转向</span></div>
+            <div class="spec"><b>&gt;1,000 km</b><span>陆行体 CLTC 综合续航</span></div>
+            <div class="spec"><b>6×</b><span>满油满电可为飞行体补能</span></div>
+            <div class="spec"><b>800V SiC</b><span>碳化硅增程平台</span></div>
+            <div class="spec"><b>270°</b><span>飞行体全景座舱</span></div>
+          </div>
+          <p class="small-note">参数为企业产品页公开口径，实际续航与补能次数受工况影响。<sup><a href="#source-3">[3]</a></sup></p>
+        </div>
+      </article>
+
+      <div class="tech-grid" aria-label="四大核心技术">
+        <article class="tech-card"><span class="tech-num">CORE 01</span><h3>动力总成</h3><p>双包冗余航空级动力电池，标称能量密度 255Wh/kg；六合一电推进系统标称体积扭矩密度 40Nm/L、推重比 12。</p></article>
+        <article class="tech-card"><span class="tech-num">CORE 02</span><h3>飞控导航</h3><p>三余度飞控导航架构；单杆操纵降低学习门槛，提供手动与自动模式，可实现一键起飞、航线规划与自动飞行。</p></article>
+        <article class="tech-card"><span class="tech-num">CORE 03</span><h3>复合材料</h3><p>碳纤维主体结构与桨叶，在航空器结构强度、重量和可折叠收纳尺寸之间取得平衡。</p></article>
+        <article class="tech-card"><span class="tech-num">CORE 04</span><h3>空中智能</h3><p>多维环境融合感知、降落视野辅助和智能航线能力，把汽车领域的感知交互思路带入低空飞行。</p></article>
+      </div>
+
+      <div class="system-grid">
+        <article class="system-card"><img class="zoomable" src="xphuitian_report_assets/land_carrier_system.webp" alt="陆地航母单杆操纵系统官方示意图"><div class="copy"><h3>单杆操纵 + 自动飞行</h3><p>通过单一操纵杆集成起降、前后左右与转向控制，降低操作复杂度；自动模式仍应在法规、空域与系统边界内使用。</p></div></article>
+        <article class="system-card"><img class="zoomable" src="xphuitian_report_assets/land_carrier_cockpit.webp" alt="陆地航母全域冗余安全架构官方示意图"><div class="copy"><h3>全域冗余安全架构</h3><p>动力、飞控、供电、通信、操纵等关键系统配置备份。官方图示包括飞控导航三余度，动力能源、高低压供配电和操纵系统双余度。</p></div></article>
+      </div>
+
+      <article class="product-feature" style="margin-top:16px">
+        <img class="product-image zoomable" src="xphuitian_report_assets/a868_official.jpg" alt="A868高速长航程全倾转混电飞行汽车官方主视觉">
+        <div class="product-copy">
+          <span class="eyebrow">Next product direction</span>
+          <h3>A868：<br>高速长航程</h3>
+          <p>全倾转旋翼 / 固定翼构型，支持垂直起降；基于自研航空级混电与“鲲鹏”超级增程方向，面向跨城低空出行。</p>
+          <div class="spec-grid">
+            <div class="spec"><b>≥500 km</b><span>官方目标航程</span></div>
+            <div class="spec"><b>≥360 km/h</b><span>官方目标航速</span></div>
+            <div class="spec"><b>VTOL</b><span>垂直起降</span></div>
+            <div class="spec"><b>Tiltrotor</b><span>全倾转构型</span></div>
+          </div>
+          <p class="small-note">A868 仍处研发、试飞及产品定义阶段，不能与陆地航母的近期试产状态混同。图与参数：汇天官网。<sup><a href="#source-4">[4]</a></sup></p>
+        </div>
+      </article>
+    </section>
+
+    <section id="operations">
+      <div class="section-head">
+        <div><span class="section-kicker">06 / Operating status</span><h2>当前运行状况</h2></div>
+        <p class="section-intro">经营状态呈现“制造能力可见、需求储备增加、融资持续、证照仍在推进”的组合。四条线需要同时看，不能只以订单或工厂单点推断全面商业化。</p>
+      </div>
+
+      <div class="status-strip">
+        <article class="status-card"><div class="status-top"><span class="section-kicker">制造</span><span class="status-pill done">试产已发生</span></div><h3>工业化爬坡</h3><p>广州工厂已实现多机同线批量试产，关键电推进系统达到千套下线节点。</p><div class="status-evidence">证据：5 台飞行器批量试产；第 1,000 套 800V 电推进单元下线。</div></article>
+        <article class="status-card"><div class="status-top"><span class="section-kicker">市场</span><span class="status-pill moving">需求储备</span></div><h3>7,000+ 订单口径</h3><p>市场意向较强，但订单质量、退款条件、交付节奏和收入确认尚无完整公开拆分。</p><div class="status-evidence">结论：可看作需求可见度，不应直接视为销售收入。</div></article>
+        <article class="status-card"><div class="status-top"><span class="section-kicker">资本</span><span class="status-pill done">补给较强</span></div><h3>多轮融资支持</h3><p>2025 年完成 2.5 亿美元 B 轮，2026 年完成近 2 亿美元新融资；另见 12.6 亿元银团贷款报道。</p><div class="status-evidence">媒体汇总历史股权融资约 10 亿美元，仍需留意研发与建厂现金消耗。</div></article>
+        <article class="status-card"><div class="status-top"><span class="section-kicker">适航</span><span class="status-pill gate">核心门槛</span></div><h3>审定流程推进中</h3><p>X3-F 的 TC、PC 申请已获受理并推进审查，但未检索到截至资料日“三证齐备”的正式公告。</p><div class="status-evidence">结论：量产准备与商业交付资格不是同一件事。</div></article>
+      </div>
+
+      <article class="panel factory-feature">
+        <div class="factory-copy">
+          <span class="section-kicker">FACTORY · GUANGZHOU</span>
+          <h3>从“能飞”走向<br>“可重复制造”</h3>
+          <p>广州飞行汽车智造基地于 2024 年 10 月动工，首期约 18 万平方米，规划年产能 1 万台。2026 年 3 月，5 台飞行器批量试产下线并完成多机试飞，说明产线从建设转向工艺与一致性验证。</p>
+          <p>2026 年 8 月第 1,000 套电推进单元下线，是关键部件产能与供应链准备的进一步信号。规划产能、试产下线和最终稳定量产之间仍有爬坡距离。</p>
+          <p class="small-note">来源：小鹏汽车官方、央视网、新华网、广州市政府门户网站。<sup><a href="#source-6">[6]</a></sup><sup><a href="#source-9">[9]</a></sup><sup><a href="#source-10">[10]</a></sup><sup><a href="#source-14">[14]</a></sup></p>
+        </div>
+        <img class="factory-image zoomable" src="xphuitian_report_assets/factory_plan_optimized.webp" alt="广州飞行汽车智造基地规划效果图">
+      </article>
+
+      <h3 style="margin:40px 0 14px;font-size:26px">适航与商业交付：决定兑现速度的闸门</h3>
+      <div class="certificate-flow" aria-label="适航到商业运营流程">
+        <article class="gate-step current"><span class="n">01 · IN REVIEW</span><h3>TC 型号合格审定</h3><p>证明型号设计符合适航标准。X3-F 申请已获受理并进入审查/符合性确认阶段。</p></article>
+        <article class="gate-step current"><span class="n">02 · IN REVIEW</span><h3>PC 生产许可审定</h3><p>证明生产体系能持续制造符合获批设计的产品。申请受理并非生产许可证已颁发。</p></article>
+        <article class="gate-step"><span class="n">03 · AIRWORTHINESS</span><h3>单机适航与交付</h3><p>每架航空器还需满足单机适航/登记等要求，具体路径以监管部门最终规则为准。</p></article>
+        <article class="gate-step"><span class="n">04 · OPERATION</span><h3>场景化运营</h3><p>空域、起降点、驾驶/操作资质、保险、维护和地方运行规则共同决定可用性。</p></article>
+      </div>
+
+      <div class="operations-grid">
+        <article class="panel op-panel"><span class="section-kicker">COMMERCIALIZATION</span><h3>正在形成的商业闭环</h3><ul class="op-list"><li>产品：陆地航母为近期量产主线，A868 为后续跨城产品方向。</li><li>制造：自建广州工厂，核心电推进部件进入千套级节点。</li><li>市场：国内订单储备增长，并通过 ARIDGE 品牌推进中东市场。</li><li>服务：布局飞行学院、飞行营地与 6S 综合运营中心。</li><li>渠道：把培训、维保、体验、补能和营地运营纳入产品落地条件。</li></ul></article>
+        <article class="panel op-panel"><span class="section-kicker">CAPITAL &amp; GOVERNANCE</span><h3>融资与资本市场观察</h3><ul class="op-list"><li>2025 年 7 月完成 2.5 亿美元 B 轮融资。</li><li>2026 年 3 月完成近 2 亿美元股权融资，高瓴创投、红杉中国、高榕创投、达晨财智等参与。</li><li>媒体统计历史股权融资总额约 10 亿美元，显示资本支持力度较强。</li><li>有媒体报道秘密递交港股 IPO 申请；公司公开回应“目前专注研发与推进量产，暂无其他信息分享”。</li><li>因此，本报告把 IPO 状态列为“媒体观察”，不写作已申报、已受理或已上市。</li></ul></article>
+      </div>
+    </section>
+
+    <section id="risks">
+      <div class="section-head">
+        <div><span class="section-kicker">07 / Judgment</span><h2>商业化判断与风险</h2></div>
+        <p class="section-intro">以下是基于公开事实形成的研究判断，不是企业承诺。低空经济的产业节奏由产品、监管、基础设施和用户接受度共同决定。</p>
+      </div>
+      <div class="risk-grid">
+        <article class="risk-card high"><span class="risk-level">HIGH · GATE</span><h3>适航与运行许可</h3><p>TC、PC、单机适航及场景运行规则直接影响交付时间和可使用范围，是最关键的外部闸门。</p></article>
+        <article class="risk-card high"><span class="risk-level">HIGH · CONVERSION</span><h3>订单转化与定价</h3><p>公开订单能否转为交付、收入和回款，取决于证照、最终售价、使用场景、退款条款和融资方案。</p></article>
+        <article class="risk-card medium"><span class="risk-level">MEDIUM · RAMP</span><h3>规模质量与供应链</h3><p>航空器需要比普通汽车更严格的一致性和可追溯体系，试产成功不等于产能已稳定释放。</p></article>
+        <article class="risk-card medium"><span class="risk-level">MEDIUM · INFRA</span><h3>营地、空域与补能</h3><p>低空产品价值依赖起降点、空域协调、补能维护、气象服务等网络；基础设施不足会限制使用频率。</p></article>
+        <article class="risk-card watch"><span class="risk-level">WATCH · USER</span><h3>培训、保险与售后</h3><p>大规模个人用户需要清晰的操作资质、训练体系、保险定价、定检维修和事故责任框架。</p></article>
+        <article class="risk-card watch"><span class="risk-level">WATCH · CAPITAL</span><h3>持续投入与资本节奏</h3><p>研发、适航、建厂和生态建设均重资产。融资能力较强，但在收入规模化前仍需持续资本支持。</p></article>
+      </div>
+    </section>
+
+    <section id="gallery-section">
+      <div class="section-head">
+        <div><span class="section-kicker">08 / Visual evidence</span><h2>图片材料</h2></div>
+        <p class="section-intro">以下图片均来自汇天或小鹏汽车官方网页，仅用于本研究报告的信息说明；版权归原权利人。点击图片可放大查看。</p>
+      </div>
+      <div class="gallery">
+        <figure><img class="zoomable" src="xphuitian_report_assets/land_carrier_event_optimized.webp" alt="陆地航母官方活动与产品展示图"><figcaption>陆地航母官方活动 / 产品展示图｜小鹏汽车官方</figcaption></figure>
+        <figure><img class="zoomable" src="xphuitian_report_assets/x2_dubai.jpg" alt="旅航者X2迪拜公开飞行"><figcaption>2022 · 旅航者 X2 迪拜公开飞行<sup><a href="#source-5">[5]</a></sup></figcaption></figure>
+        <figure><img class="zoomable" src="xphuitian_report_assets/land_carrier_detail.webp" alt="陆地航母三轴六轮底盘结构官方图"><figcaption>陆地航母 · 三轴六轮陆行体<sup><a href="#source-3">[3]</a></sup></figcaption></figure>
+        <figure><img class="zoomable" src="xphuitian_report_assets/factory_groundbreaking.jpg" alt="广州飞行汽车智造基地动工仪式"><figcaption>2024 · 广州飞行汽车智造基地动工<sup><a href="#source-6">[6]</a></sup></figcaption></figure>
+        <figure><img class="zoomable" src="xphuitian_report_assets/x2_concept.jpg" alt="旅航者X2官方图片"><figcaption>旅航者 X2 · 早期产品验证<sup><a href="#source-5">[5]</a></sup></figcaption></figure>
+      </div>
+    </section>
+
+    <section id="sources">
+      <div class="section-head">
+        <div><span class="section-kicker">09 / Sources</span><h2>来源与口径</h2></div>
+        <p class="section-intro">优先使用企业官网、监管相关公开信息、中央媒体和政府门户。媒体报道与企业目标均按其原始性质呈现，不做确定性外推。</p>
+      </div>
+      <div class="sources-table-wrap">
+        <table>
+          <thead><tr><th>编号</th><th>来源</th><th>主要用途</th><th>证据属性</th></tr></thead>
+          <tbody>
+            <tr id="source-1"><td>[1]</td><td><a href="https://www.aridge.com/" target="_blank" rel="noopener">汇天 / ARIDGE 官网首页</a></td><td>当前品牌、企业定位、产品入口与生态布局</td><td>企业一手资料</td></tr>
+            <tr id="source-2"><td>[2]</td><td><a href="https://www.aridge.com/about" target="_blank" rel="noopener">关于汇天</a></td><td>企业沿革、愿景、关键发展节点</td><td>企业一手资料</td></tr>
+            <tr id="source-3"><td>[3]</td><td><a href="https://www.aridge.com/x3" target="_blank" rel="noopener">陆地航母产品页</a></td><td>分体式构型、自动分合、动力/飞控/冗余、续航与补能等参数</td><td>企业产品口径</td></tr>
+            <tr id="source-4"><td>[4]</td><td><a href="https://www.aridge.com/a868" target="_blank" rel="noopener">A868 产品页</a></td><td>全倾转混电构型、≥500km 航程、≥360km/h 航速</td><td>研发目标口径</td></tr>
+            <tr id="source-5"><td>[5]</td><td><a href="https://www.xiaopeng.com/news/company_news/4499.html" target="_blank" rel="noopener">小鹏汽车：X2 迪拜公开飞行与团队介绍</a></td><td>2022 年海外公开飞行、创始团队及团队结构历史数据</td><td>企业一手资料</td></tr>
+            <tr id="source-6"><td>[6]</td><td><a href="https://www.xiaopeng.com/news/company_news/5395.html" target="_blank" rel="noopener">小鹏汽车：广州飞行汽车智造基地动工</a></td><td>首期约 18 万平方米、规划年产能 1 万台</td><td>企业一手资料</td></tr>
+            <tr id="source-7"><td>[7]</td><td><a href="https://www.xiaopeng.com/news/company_news/5438.html" target="_blank" rel="noopener">小鹏汽车：CES 与陆地航母进展</a></td><td>超过 3,000 台预订、安全架构及技术展示</td><td>企业一手资料</td></tr>
+            <tr id="source-8"><td>[8]</td><td><a href="https://www.xiaopeng.com/news/company_news/5466.html" target="_blank" rel="noopener">小鹏汽车：X3-F 生产许可证申请获受理</a></td><td>PC 申请受理、TC 符合性确认阶段</td><td>企业一手资料</td></tr>
+            <tr id="source-9"><td>[9]</td><td><a href="https://auto.cctv.com/2026/03/06/ARTIEj4XLHzhANuulx3885Zu260306.shtml" target="_blank" rel="noopener">央视网：5 台飞行器批量试产下线</a>；<a href="https://www.news.cn/fortune/20260306/49f468fdc4584ad5bee8cf9f95e5b9df/c.html" target="_blank" rel="noopener">新华网同题报道</a></td><td>2026 年 3 月批量试产、多机试飞</td><td>中央媒体报道</td></tr>
+            <tr id="source-10"><td>[10]</td><td><a href="https://www.gz.gov.cn/ysgz/xwdt/ysdt/content/post_10712876.html" target="_blank" rel="noopener">广州市政府门户网站：批量试产进展</a></td><td>属地政府对工厂与试产节点的公开信息</td><td>政府公开信息</td></tr>
+            <tr id="source-11"><td>[11]</td><td><a href="https://m.thepaper.cn/newsDetail_forward_32762158" target="_blank" rel="noopener">澎湃新闻：近 2 亿美元新一轮融资</a></td><td>2026 年融资、投资机构及历史股权融资约 10 亿美元</td><td>媒体报道 / 融资口径</td></tr>
+            <tr id="source-13"><td>[13]</td><td><a href="https://www.ccaonline.cn/hqtx/1214351.html" target="_blank" rel="noopener">中国民用航空网：陆地航母订单超过 7,000 台</a></td><td>2026 年 7 月订单与量产交付目标</td><td>行业媒体报道</td></tr>
+            <tr id="source-14"><td>[14]</td><td><a href="https://auto.cctv.com/2026/08/10/ARTIYUUjbKG9GZbgFtkaSWQzw260810.shtml" target="_blank" rel="noopener">央视网：第 1,000 套电推进单元下线</a></td><td>800V 电推进系统千套级生产节点</td><td>中央媒体报道</td></tr>
+            <tr id="source-15"><td>[15]</td><td><a href="https://www.cannews.com.cn/dikongjingji/2026/08-10/7rogb4Nr.html" target="_blank" rel="noopener">中国航空新闻网：电推进单元下线</a></td><td>关键部件量产进展交叉验证</td><td>行业媒体报道</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="method-note">
+        <div><h3>研究方法</h3><p>以公司官网与小鹏汽车官方信息建立基础事实，再用政府门户、中央媒体和航空行业媒体交叉核验；对订单、融资、产能、证照和 IPO 采用不同证据等级，不混用“企业目标”与“已实现结果”。</p></div>
+        <div><h3>信息边界</h3><p>本报告仅使用截至 2026-09-20 可公开获取的信息。非上市公司不持续披露完整财务报表，因此无法独立核验收入、利润、现金流、订单合同条件和实时员工数；相关缺口已在正文明确标注。</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div><strong>小鹏汇天企业研究报告</strong><br>公开资料整理 · 资料截止 2026-09-20</div>
+    <div>本材料仅供信息研究与交流，不构成投资、采购、适航或运营建议。<br>页面图片版权归汇天 / 小鹏汽车及原权利人所有。</div>
+  </footer>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="图片放大预览">
+    <button type="button" aria-label="关闭预览">×</button>
+    <img src="" alt="放大预览">
+    <div class="lightbox-caption"></div>
+  </div>
+
+  <script>
+    (() => {
+      const progress = document.getElementById('progress');
+      const navLinks = [...document.querySelectorAll('nav a')];
+      const sections = navLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+
+      const updateScroll = () => {
+        const max = document.documentElement.scrollHeight - innerHeight;
+        progress.style.width = (max > 0 ? scrollY / max * 100 : 0) + '%';
+        let current = '';
+        for (const section of sections) if (section.getBoundingClientRect().top <= 130) current = '#' + section.id;
+        navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === current));
+      };
+      addEventListener('scroll', updateScroll, { passive: true });
+      updateScroll();
+
+      const buttons = document.querySelectorAll('.filter-button');
+      const items = document.querySelectorAll('.timeline-item');
+      buttons.forEach(button => button.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('active'));
+        button.classList.add('active');
+        const filter = button.dataset.filter;
+        items.forEach(item => item.classList.toggle('hidden', filter !== 'all' && item.dataset.phase !== filter));
+      }));
+
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImage = lightbox.querySelector('img');
+      const lightboxCaption = lightbox.querySelector('.lightbox-caption');
+      const close = () => {
+        lightbox.classList.remove('open');
+        document.body.style.overflow = '';
+        lightboxImage.src = '';
+      };
+      document.querySelectorAll('.zoomable').forEach(img => {
+        img.addEventListener('click', () => {
+          lightboxImage.src = img.src;
+          lightboxImage.alt = img.alt;
+          lightboxCaption.textContent = img.alt;
+          lightbox.classList.add('open');
+          document.body.style.overflow = 'hidden';
+          lightbox.querySelector('button').focus();
+        });
+      });
+      lightbox.querySelector('button').addEventListener('click', close);
+      lightbox.addEventListener('click', e => { if (e.target === lightbox) close(); });
+      addEventListener('keydown', e => { if (e.key === 'Escape' && lightbox.classList.contains('open')) close(); });
+    })();
+  </script>
+</body>
+</html>
